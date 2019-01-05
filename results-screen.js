@@ -31,8 +31,9 @@ class ResultsScreen {
   		document.querySelector(".continue").textContent = "Start Over?";
   		document.querySelector(".continue").addEventListener('click', function(){
   			document.querySelector(".correct").textContent = "";
+        console.log(app.flashcards.deckNum);
   			app.flashcards.makeCards(app.flashcards.deckNum); // resets card values
-  			cardTotal = 0;
+  			totalCard = 0;
   			app.results.hide();
 				app.flashcards.show();
   		});
@@ -47,7 +48,7 @@ class ResultsScreen {
 					tempValues.push(wrongCards[i][1]);
 				}
 				app.flashcards.cardValues = [tempKeys, tempValues];
-				cardTotal = 0;
+				totalCard = 0;
 				app.results.hide();
 				app.flashcards.show();
 			});
